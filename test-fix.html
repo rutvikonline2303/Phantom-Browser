@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ad Blocker Fix Test</title>
+</head>
+
+<body>
+    <h1>Testing Video Player Fix</h1>
+
+    <!-- This element was previously blocked by suspicious-pattern -->
+    <div id="player-container"
+        class="player-container__player xplayer notranslate xp-progress-bar-full xplayer-ads-preload"
+        style="width: 640px; height: 360px; background: #000; color: #fff; display: flex; align-items: center; justify-content: center;">
+        Legitimate Video Player (XPlayer)
+    </div>
+
+    <!-- This element was previously killed by OverlayKiller as "large overlay" -->
+    <div id="large-player-overlay" class="xplayer-overlay"
+        style="position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; background: rgba(0,0,0,0.8); z-index: 1000; color: #fff; display: flex; align-items: center; justify-content: center;">
+        Large Overlay (Should not be killed if it's a player)
+    </div>
+
+    <script>
+        console.log('Test page loaded');
+    </script>
+</body>
+
+</html>
